@@ -44,15 +44,23 @@ for t in time:
     omega_history.append(omega)
 
 # -------------------------
-# Plot Angle
+# Plot State Variables
 # -------------------------
 
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(10,5))
+
+plt.subplot(2,1,1)
 plt.plot(time, theta_history)
-
-plt.xlabel("Time (s)")
 plt.ylabel("Angle (deg)")
-plt.title("State Space Pendulum - Angle")
-
+plt.title("State Variables")
 plt.grid(True)
+
+plt.subplot(2,1,2)
+plt.plot(time, omega_history)
+plt.ylabel("Angular Velocity")
+plt.xlabel("Time (s)")
+plt.grid(True)
+
+plt.tight_layout()
+plt.savefig("images/day2/state_variables.png")
 plt.show()
